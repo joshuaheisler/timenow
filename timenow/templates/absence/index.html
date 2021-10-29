@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Abwesenheitsübersicht{% endblock title %}
+
+{% block content %}
+    <h1>Abwesenheitsübersicht</h1>
+    <div class="list-group">
+        {% for absence in absence_list %}
+            <a href="{{ absence.id }}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Urlaub vom {{ absence.absence_from }} zum {{ absence.absence_to }}</h5>
+                    <small>{{ absence.amount_of_days }} Tag(e)</small>
+                </div>
+                {% if absence.comment %}<p class="mb-1">{{ absence.comment }}</p>{% endif %}
+                <small>And some small print.</small>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock content %}

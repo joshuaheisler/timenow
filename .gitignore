@@ -1,0 +1,5 @@
+# Datenbank nicht mit ins Repo nehmen
+db.sqlite3
+
+# PyCharm-spezifisches nicht mitnehmen
+/.idea/
