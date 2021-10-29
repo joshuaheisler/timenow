@@ -2,5 +2,23 @@
 {% block title %}Abwesenheitenhistorie{% endblock title %}
 
 {% block content %}
-    <h1>Absence History</h1>
+    <h1>Deine Abwesenheiten</h1>
+    <div class="list-group">
+        {% for absence in absence_set %}
+            <a href="{{ absence.id }}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Urlaub vom {{ absence.absence_from }} zum {{ absence.absence_to }}</h5>
+                    <small>{{ absence.amount_of_days }} Tag(e)</small>
+                </div>
+                {% if absence.comment %}<p class="mb-1">Kommentar: {{ absence.comment }}</p>{% endif %}
+                {% if absence.approved == None %}
+                    <p><span class="badge bg-warning text-dark">Genehmigung ausstehend</span></p>{% endif %}
+                {% if absence.approved == True %}
+                    <p><span class="badge bg-success">Genehmigt</span></p>{% endif %}
+                {% if absence.approved == False %}
+                    <p><span class="badge bg-error">Abgelehnt</span></p>{% endif %}
+            </a>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock content %}

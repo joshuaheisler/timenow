@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 # Handle für Aufrufe ohne Parameter
 def index(request):
-    return redirect('times_dashboard') if request.user.is_authenticated else redirect('login')
+    return redirect('times:dashboard') if request.user.is_authenticated else redirect('login')
 
 # Handle für Fehleranzeige
 def error400(request, exception):

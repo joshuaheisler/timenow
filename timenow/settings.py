@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'timenow',
     'absence',
-    'times'
+    'times',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Detailansicht für ...{% endblock title %}
+{% block title %}Detailansicht für Antrag Nr. {{ absence.id }}{% endblock title %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>Detailansicht für {{ absence.id }}</h1>
+    <h1>Detailansicht für Antrag Nr. {{ absence.id }}</h1>
+    <p>
+        {{ form|crispy }}
+    </p>
 {% endblock content %}
