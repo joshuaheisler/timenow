@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}" alt="TimeNOW" width="64px"/></a>
+        <a class="navbar-brand" href="/"><img src="{% static 'images/logo.png' %}" alt="TimeNOW" width="64px"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +35,11 @@
                             </li>
                             <li><a class="dropdown-item" href="{% url 'absence:history' %}">Historie</a></li>
                             <li><a class="dropdown-item" href="{% url 'absence:create' %}">Abwesenheit erfassen</a></li>
+                            <li>
+                                <a class="dropdown-item position-relative" href="{% url 'absence:create' %}">Ausstehende Genehmigungen
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

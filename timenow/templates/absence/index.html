@@ -3,6 +3,14 @@
 
 {% block content %}
     <h1>Abwesenheitsübersicht</h1>
+    <p>
+        <a class="btn btn-primary mt-1" href="{% url 'absence:create' %}">Abwesenheit erfassen</a>
+        <a class="btn btn-primary position-relative mt-1">
+            Ausstehende Genehmigungen
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
+        </a>
+    </p>
+    <h2>Ausstehende Abwesenheiten</h2>
     {% if absence_set %}
         <div class="list-group">
             {% for absence in absence_set %}
@@ -22,6 +30,6 @@
             {% endfor %}
         </div>
     {% else %}
-        <p>Keine offenen oder ausstehenden Abwesenheiten</p>
+        <p>Keine ausstehenden Abwesenheiten</p>
     {% endif %}
 {% endblock content %}
